@@ -13,7 +13,7 @@ public class Main {
                 400,
                 "Николай Бубкин");
     }
-    public static void Smartphone1(String[] args) {
+    public static void Smartphone(String[] args) {
         Product smartphone = new Smartphone(
                 3,
                 "а11",
