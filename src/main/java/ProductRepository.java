@@ -1,33 +1,29 @@
 public class ProductRepository {
-    private Product[] items = new Product[0];
+    private Product[] products = new Product[0];
 
-    public void add(Product item) {
-        Product[] tmp = new Product[items.length + 1];
-        for (int i = 0; i < items.length; i++) {
-            tmp[i] = items[i];
+    public void add(Product product) {
+        Product[] tmp = new Product[products.length + 1];
+        for (int i = 0; i < products.length; i++) {
+            tmp[i] = products[i];
         }
-        tmp[tmp.length - 1] = item;
-        items = tmp;
+        tmp[tmp.length - 1] = product;
+        products = tmp;
     }
 
     public Product[] findAll() {
-        return items;
+        return products;
     }
 
     public void removeById(int id) {
-        Product[] tmp = new Product[items.length - 1];
-        int copyToIndex = 0;
-        for (Product item : items) {
-            if (item.getId() != id) {
-                tmp[copyToIndex] = item;
-                copyToIndex++;
+        Product[] tmp = new Product[products.length - 1];
+        int index = 0;
+        for (Product product : products) {
+            if (product.getId() != id) {
+                tmp[index] = product;
+                index++;
             }
         }
-        items = tmp;
-    }
-
-    public Product[] getItems() {
-        return items;
+        products = tmp;
     }
 
 }
